@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mapa Demo</title>
+
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>if (window.module) module = window.module;</script>
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style type='text/css'>
+        #info {
+            display: block;
+            position: relative;
+            margin: 0px auto;
+            width: 50%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            font-size: 12px;
+            text-align: center;
+            color: #222;
+            background: #fff;
+        }
+
+        body {
+          margin: 0;
+          padding :0;
+        }
+        .map {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 100%;
+        }
+
+        .marker {
+          background-image: url('https://www.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
+          background-size: cover;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        .mapboxgl-popup {
+          max-width: 200px;
+        }
+
+        .mapboxgl-popup-content {
+          text-align: center;
+          font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+  </head>
+  <body style="background: black;">
+    <!--<pre id='info'></pre>-->
+    <div id='map' style='width: 1900px; height: 1050px;'>
+      <button id="btnGenerarMarkers">Buscar Persona</button>
+      <input type="text" id="filtroUsuario"/>
+    </div>
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+
+  </body>
+</html>
